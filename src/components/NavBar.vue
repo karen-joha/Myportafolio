@@ -51,7 +51,6 @@ const { isDark, toggle } = useTheme()
 const links = [
   { href: '#hero', id: 'hero', label: 'Inicio' },
   { href: '#about', id: 'about', label: 'Sobre mí' },
-  { href: '#skills', id: 'skills', label: 'Skills' },
   { href: '#projects', id: 'projects', label: 'Proyectos' },
   { href: '#contact', id: 'contact', label: 'Contacto' },
 ]

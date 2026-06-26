@@ -82,7 +82,6 @@ const { projects, loading, error } = useProjects()
 .hero-content {
   position: relative;
   z-index: 1;
-  padding-top: 6rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -253,8 +252,9 @@ const { projects, loading, error } = useProjects()
 .project-cta {
   background-color: var(--accent);
   padding: 0.5rem;
+  color: aliceblue;
   border-radius: 10px;
-  font-weight: 200;
+  font-weight: 500;
   gap: 0.65rem;
 }
 

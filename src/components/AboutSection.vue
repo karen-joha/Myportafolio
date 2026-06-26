@@ -3,49 +3,26 @@
     <div class="container about-grid">
       <div class="about-text">
         <span class="section-label">Sobre mí</span>
-        <h2 class="section-title">Un poco sobre quién soy</h2>
-        <p>
-          Técnica en Programación de Software Bilingüe (B2), con conocimientos sólidos en HTML, CSS, JavaScript, y
-          frameworks como React,Tailwind CSS y Vue, orientada al desarrollo de sitios web optimizados y responsivos.
-          Cuento con experiencia en la creación de interfaces de usuario para aplicaciones web, implementando diseños
-          atractivos y funcionales que garantizan una excelente experiencia de usuario y compatibilidad en diferentes
-          dispositivos. Además, poseo habilidades en la integración de APIs y en el manejo de versiones con Git. Mi
-          experiencia en mercadeo, combinada con mis habilidades en desarrollo, me ha brindado una visión integral desde
-          ambas perspectivas: la del cliente y la del desarrollador. Esto me permite crear soluciones que no sólo son
-          técnicamente sólidas, sino también alineadas con las necesidades y expectativas del usuario final.
-
-          Me encanta aprender cosas nuevas, colaborar en equipo y construir proyectos que generen impacto real.
-        </p>
-        <p>
-          Me encanta aprender cosas nuevas, colaborar en equipo y construir proyectos que generen impacto real.
-
+        <h2 class="section-title">
+          {{ about?.title }}
+        </h2>
+        <p v-for="(paragraph, index) in about?.description" :key="index">
+          {{ paragraph }}
         </p>
         <div class="about-badges">
-          <span v-for="b in badges" :key="b" class="badge">{{ b }}</span>
+          <span v-for="badge in about?.badges" :key="badge" class="badge">
+            {{ badge }}
+          </span>
         </div>
       </div>
-
-<!--       <div class="about-card">
-        <div class="card-inner">
-          <div class="about-stats">
-            <div v-for="s in stats" :key="s.label" class="stat-item">
-              <span class="stat-num">{{ s.value }}</span>
-              <span class="stat-label">{{ s.label }}</span>
-            </div>
-          </div>
-        </div>
-      </div> -->
     </div>
   </section>
 </template>
 
 <script setup>
-const badges = ['Vue 3', 'React', 'Node.js', 'Firebase', 'TypeScript', 'Tailwind CSS']
-const stats = [
-  { value: '3+', label: 'Años de experiencia' },
-  { value: '10+', label: 'Proyectos completados' },
-  { value: '∞', label: 'Ganas de aprender' },
-]
+import { useAbout } from '../composables/useAbout'
+
+const { about, loading } = useAbout()
 </script>
 
 <style scoped>

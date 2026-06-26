@@ -54,7 +54,6 @@
 .hero-content {
   position: relative;
   z-index: 1;
-  padding-top: 6rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
